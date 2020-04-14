@@ -12,7 +12,7 @@ RUN apt-get update && apt-get --yes install libsensors4-dev && apt-get clean && 
 RUN go get github.com/md14454/gosensors github.com/prometheus/client_golang/prometheus && go install github.com/ncabatoff/sensor-exporter
 
 # Run the outyet command by default when the container starts.
-ENTRYPOINT /go/bin/sensor-exporter -hddtemp-address ${HOSTNAME}:7634
+ENTRYPOINT /go/bin/sensor-exporter -hddtemp-address ${HDDTEMP}:7634
 
 # Document that the service listens on port 9255.
 EXPOSE 9255
